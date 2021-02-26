@@ -1,0 +1,18 @@
+{
+  "Place1": {
+    "name": "ASU",
+    "description": "Arizona State University",
+    "category": "University",
+    "addressTitle": "Arizona State University",
+    "address" : {
+      "street": "",
+      "city": "Tempe",
+      "state": "Arizona",
+      "country":"USA",
+      "zipCode":"85281"
+    },
+    "elevation": "",
+    "latitude": "",
+    "longitude": ""
+  }
+}

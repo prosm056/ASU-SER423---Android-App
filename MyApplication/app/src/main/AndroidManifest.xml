@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="bsse.asu.edu.eduasubsse1219597327ser423sambuddhanathandroid">
+    package="bsse.asu.edu.myapplication">
 
     <application
         android:allowBackup="true"
@@ -9,16 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="bsse.asu.edu.ser423sambuddhanathandroid.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="bsse.asu.edu.ser423sambuddhanathandroid.PlaceDescriptionActivity"
-                    android:label="@string/placeDescription"
-            />
     </application>
 
 </manifest>

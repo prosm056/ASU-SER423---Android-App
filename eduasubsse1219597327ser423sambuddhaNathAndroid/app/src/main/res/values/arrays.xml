@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="place_description">
+        <item>Name</item>
+        <item>Description</item>
+        <item>Category</item>
+        <item>Address Title</item>
+        <item>Elevation</item>
+        <item>Latitude</item>
+        <item>Longitude</item>
+    </string-array>
+</resources>

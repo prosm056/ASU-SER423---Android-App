@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">edu.asu.bsse.1219597327.ser423sambuddhaNathAndroid</string>
+    <string name="placeName">Name</string>
+    <string name="placeDescription">Description</string>
+    <string name="placeCategory">Category</string>
+    <string name="placeAddressTitle">Address Title</string>
+    <string name="placeElevation">Elevation</string>
+    <string name="placeLatitude">Latitude</string>
+    <string name="placeLongitude">Longitude</string>
 </resources>

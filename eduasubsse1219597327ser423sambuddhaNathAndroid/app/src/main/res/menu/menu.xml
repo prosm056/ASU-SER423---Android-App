@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="Add"
+        android:id="@+id/place_add"
+        app:showAsAction="always"/>
+    <item
+        android:title="Modify"
+        android:id="@+id/place_modify"/>
+    <item
+        android:title="Remove"
+        android:id="@+id/place_Remove"/>
+    <item
+        android:title="Distance"
+        android:id="@+id/place_distance"/>
+</menu>

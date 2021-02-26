@@ -17,7 +17,7 @@ package bsse.asu.edu.ser423sambuddhanathandroid.models;
  *
  * Purpose: Example classes conversion to/from json
  * This example shows the use of Android's
- * org.json package in creating json string of a PlaceDescription object.
+ * org.json package in creating json string of a PlaceDescriptionPOJO object.
  *
  * Ser423 Mobile Applications
  * see http://pooh.poly.asu.edu/Mobile
@@ -27,41 +27,47 @@ package bsse.asu.edu.ser423sambuddhanathandroid.models;
  */
 
 import org.json.JSONObject;
+import org.json.JSONTokener;
 import java.io.Serializable;
 
-public class PlaceDescription implements Serializable {
+public class PlaceDescriptionPOJO implements Serializable {
 
     private String name;
     private String description;
     private String category;
     private String addressTitle;
     private Address address;
-    private double elevation;
-    private double latitude;
-    private double longitude;
+    private String elevation;
+    private String latitude;
+    private String longitude;
 
-    PlaceDescription(JSONObject jsonObject) throws Exception {
+    public PlaceDescriptionPOJO(JSONObject jsonObject) throws Exception {
         try {
-            this.name = jsonObject.getString("name");
-            this.description = jsonObject.getString("description");
-            this.category = jsonObject.getString("category");
-            this.addressTitle = jsonObject.getString("addressTitle");
+            this.name = jsonObject.optString("name","unknown");
+            this.description = jsonObject.optString("description","unknown");
+            this.category = jsonObject.optString("category","unknown");
+            this.addressTitle = jsonObject.optString("addressTitle","unknown");
 
             // get address object
-            JSONObject jsonObjectAddress = jsonObject.getJSONObject("address");
-            this.address.setStreet(jsonObjectAddress.getString("street"));
-            this.address.setCity(jsonObjectAddress.getString("city"));
-            this.address.setState(jsonObjectAddress.getString("state"));
-            this.address.setCountry(jsonObjectAddress.getString("country"));
-            this.address.setZipCode(jsonObjectAddress.getInt("zipCode"));
+//            JSONObject jsonObjectAddress = jsonObject.getJSONObject("address");
+//            this.address.setStreet(jsonObjectAddress.optString("street","unknown"));
+//            this.address.setCity(jsonObjectAddress.optString("city","unknown"));
+//            this.address.setState(jsonObjectAddress.optString("state","unknown"));
+//            this.address.setCountry(jsonObjectAddress.optString("country","unknown"));
+//            this.address.setZipCode(jsonObjectAddress.optString("zipCode"));
 
-            this.elevation = jsonObject.getDouble("elevation");
-            this.latitude = jsonObject.getDouble("latitude");
-            this.longitude = jsonObject.getDouble("longitude");
+            this.elevation = jsonObject.optString("elevation");
+            this.latitude = jsonObject.optString("latitude");
+            this.longitude = jsonObject.optString("longitude");
         } catch (Exception e) {
-            System.out.println("Unable to form PlaceDescription object from json format: " + e.getMessage());
+            System.out.println("Unable to form PlaceDescriptionPOJO object from json format: " + e.getMessage());
             throw e;
         }
+    }
+
+    public PlaceDescriptionPOJO getObjectFromString(String sObject) throws Exception {
+        JSONObject pdJson = new JSONObject(new JSONTokener(sObject));
+        return new PlaceDescriptionPOJO(pdJson);
     }
 
     public String getName() {
@@ -104,27 +110,27 @@ public class PlaceDescription implements Serializable {
         this.address = address;
     }
 
-    public double getElevation() {
+    public String getElevation() {
         return elevation;
     }
 
-    public void setElevation(double elevation) {
+    public void setElevation(String elevation) {
         this.elevation = elevation;
     }
 
-    public double getLatitude() {
+    public String getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(double latitude) {
+    public void setLatitude(String latitude) {
         this.latitude = latitude;
     }
 
-    public double getLongitude() {
+    public String getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(double longitude) {
+    public void setLongitude(String longitude) {
         this.longitude = longitude;
     }
 
